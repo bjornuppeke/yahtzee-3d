@@ -1,0 +1,13 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	background-color: #0086e4;
+	margin: 0;
+	padding: 0;
+}
+
+#throw {
+	color: #efefef;
+	font-size: 32px;
+	padding-top: 20px;
+}

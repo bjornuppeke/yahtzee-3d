@@ -1,0 +1,13 @@
+{
+  "name": "yo-three",
+  "version": "0.0.0",
+  "dependencies": {
+    "requirejs": "~2.1.8",
+    "jquery": "*",
+    "threejs": "r60",
+    "ammo.js": "kripken/ammo.js",
+    "underscore": "~1.5.2",
+    "shake.js": "*"
+  },
+  "devDependencies": {}
+}
