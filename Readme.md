@@ -13,11 +13,11 @@
     $ git clone https://github.com/bjornuppeke/yatzy-3d.git
     $ cd yatzy-3d
 
-  Install the dependencies.
+  Install the NPM dependencies.
 
     $ npm install
 
-  Install the Bower components.
+  Install the Bower dependencies.
 
     $ bower install
 
