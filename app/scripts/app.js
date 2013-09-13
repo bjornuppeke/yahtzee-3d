@@ -34,15 +34,14 @@ define(['threejs', 'physijs', 'orbitControls', 'detector', 'shake', 'well', 'die
         // Scene
         app.projector = new THREE.Projector;
         app.scene = new Physijs.Scene;
-        app.scene.setGravity(new THREE.Vector3( 0, -200, 0 ));
+        app.scene.setGravity(new THREE.Vector3( 0, -400, 0 ));
 
         // Camera
-
-        console.log(options.ratio);
-
         app.camera = new THREE.PerspectiveCamera( 20, options.ratio, 1, 1000 );
         app.camera.position.set(options.landscape ? 0 : -1, Math.round(Math.tan(80) * 31), options.landscape);
         app.camera.lookAt(app.scene.position);
+
+        //Camera controls
         // app.controls = new THREE.OrbitControls(app.camera);
 
         // Light
@@ -104,19 +103,19 @@ define(['threejs', 'physijs', 'orbitControls', 'detector', 'shake', 'well', 'die
         // material
         var dieFaces = [
                 new THREE.MeshLambertMaterial({
-                    map: THREE.ImageUtils.loadTexture('images/die/face_1.png')
-                }),
-                new THREE.MeshLambertMaterial({
-                    map: THREE.ImageUtils.loadTexture('images/die/face_2.png')
+                    map: THREE.ImageUtils.loadTexture('images/die/face_4.png')
                 }),
                 new THREE.MeshLambertMaterial({
                     map: THREE.ImageUtils.loadTexture('images/die/face_3.png')
                 }),
                 new THREE.MeshLambertMaterial({
-                    map: THREE.ImageUtils.loadTexture('images/die/face_4.png')
+                    map: THREE.ImageUtils.loadTexture('images/die/face_2.png')
                 }),
                 new THREE.MeshLambertMaterial({
                     map: THREE.ImageUtils.loadTexture('images/die/face_5.png')
+                }),
+                new THREE.MeshLambertMaterial({
+                    map: THREE.ImageUtils.loadTexture('images/die/face_1.png')
                 }),
                 new THREE.MeshLambertMaterial({
                     map: THREE.ImageUtils.loadTexture('images/die/face_6.png')
@@ -143,7 +142,9 @@ define(['threejs', 'physijs', 'orbitControls', 'detector', 'shake', 'well', 'die
     app.animate = function() {
 
         window.requestAnimationFrame( app.animate );
-        // app.controls.update(app.camera);
+        if (app.controls) {
+            app.controls.update(app.camera);
+        }
         app.scene.simulate(); // run physics
         // console.log(app.dice[0]._physijs.linearVelocity);
         app.render();

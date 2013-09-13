@@ -14,7 +14,7 @@ define(['threejs', 'physijs'], function () {
 
 			material = Physijs.createMaterial(
                 spec.faceMaterial,
-                0.8, // friction
+                0.9, // friction
                 0.1 // restitution
             ),
 

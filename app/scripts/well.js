@@ -9,7 +9,7 @@ define(['threejs', 'physijs'], function () {
                     color: options.backgroundColor,
                     wireframe: false
                 }),
-                0.8, // friction
+                0.9, // friction
                 0.1 // restitution
             ),
             wallMaterial = Physijs.createMaterial(
@@ -18,7 +18,7 @@ define(['threejs', 'physijs'], function () {
                     opacity: 0.0,
                     transparent: true
                 }),
-                0.8, // friction
+                0.9, // friction
                 0.1 // restitution
             ),
             walls = {},
